@@ -107,39 +107,6 @@ export const constantRoutes: RouteRecordRaw[] = [
         }
       }
     ]
-  },
-  {
-    path: "/demo",
-    component: Layouts,
-    redirect: "/demo/unocss",
-    name: "Demo",
-    meta: {
-      title: "示例集合",
-      elIcon: "DataBoard"
-    },
-    children: [
-      {
-        path: "level2",
-        component: () => import("@/pages/demo/level2/index.vue"),
-        redirect: "/demo/level2/level3",
-        name: "Level2",
-        meta: {
-          title: "二级路由",
-          alwaysShow: true
-        },
-        children: [
-          {
-            path: "level3",
-            component: () => import("@/pages/demo/level2/level3/index.vue"),
-            name: "Level3",
-            meta: {
-              title: "三级路由",
-              keepAlive: true
-            }
-          }
-        ]
-      }
-    ]
   }
 ]
 
@@ -149,41 +116,6 @@ export const constantRoutes: RouteRecordRaw[] = [
  * @description 必须带有唯一的 Name 属性
  */
 export const dynamicRoutes: RouteRecordRaw[] = [
-  {
-    path: "/permission",
-    component: Layouts,
-    redirect: "/permission/page-level",
-    name: "Permission",
-    meta: {
-      title: "权限演示",
-      elIcon: "Lock",
-      // 可以在根路由中设置角色
-      roles: ["admin", "editor"],
-      alwaysShow: true
-    },
-    children: [
-      {
-        path: "page-level",
-        component: () => import("@/pages/demo/permission/page-level.vue"),
-        name: "PermissionPageLevel",
-        meta: {
-          title: "页面级",
-          // 或者在子路由中设置角色
-          roles: ["admin"]
-        }
-      },
-      {
-        path: "button-level",
-        component: () => import("@/pages/demo/permission/button-level.vue"),
-        name: "PermissionButtonLevel",
-        meta: {
-          title: "按钮级",
-          // 如果未设置角色，则表示：该页面不需要权限，但会继承根路由的角色
-          roles: undefined
-        }
-      }
-    ]
-  }
 ]
 
 /** 路由实例 */
