@@ -65,12 +65,18 @@ export const constantRoutes: RouteRecordRaw[] = [
   },
   {
     path: "/text-encode-decode",
-    component: () => import("@/pages/text_encode_decode/index.vue"),
-    name: "TextEncodeDecode",
-    meta: {
-      title: "文本加解密",
-      elIcon: "DataBoard"
-    }
+    component: Layouts,
+    children: [
+      {
+        path: "dashboard",
+        component: () => import("@/pages/text_encode_decode/index.vue"),
+        name: "TextEncodeDecode",
+        meta: {
+          title: "文本加解密",
+          elIcon: "DataBoard"
+        }
+      }
+    ]
   },
   {
     path: "/demo",
