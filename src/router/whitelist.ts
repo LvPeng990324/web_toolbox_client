@@ -7,8 +7,6 @@ const whiteListByPath: string[] = [
 
 /** 免登录白名单（匹配路由 name） */
 const whiteListByName: RouteRecordNameGeneric[] = [
-  "Dashboard",
-  "TextEncodeDecode"
 ]
 
 /** 判断是否在白名单 */
