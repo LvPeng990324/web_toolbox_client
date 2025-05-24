@@ -68,7 +68,7 @@ export const constantRoutes: RouteRecordRaw[] = [
     component: Layouts,
     children: [
       {
-        path: "dashboard",
+        path: "",
         component: () => import("@/pages/text_encode_decode/index.vue"),
         name: "TextEncodeDecode",
         meta: {
@@ -83,7 +83,7 @@ export const constantRoutes: RouteRecordRaw[] = [
     component: Layouts,
     children: [
       {
-        path: "dashboard",
+        path: "",
         component: () => import("@/pages/json_format/index.vue"),
         name: "JsonFormat",
         meta: {
