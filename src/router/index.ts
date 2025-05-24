@@ -94,6 +94,21 @@ export const constantRoutes: RouteRecordRaw[] = [
     ]
   },
   {
+    path: "/timestamp-covert",
+    component: Layouts,
+    children: [
+      {
+        path: "",
+        component: () => import("@/pages/timestamp_covert/index.vue"),
+        name: "TimestampCovert",
+        meta: {
+          title: "时间戳转换",
+          elIcon: "DataBoard"
+        }
+      }
+    ]
+  },
+  {
     path: "/demo",
     component: Layouts,
     redirect: "/demo/unocss",
