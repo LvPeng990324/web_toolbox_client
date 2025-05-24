@@ -21,6 +21,7 @@
     "element-plus": "2.9.7",
     "js-cookie": "3.0.5",
     "js-md5": "0.8.3",
+    "json-editor-vue": "0.18.1",
     "lodash-es": "4.17.21",
     "mitt": "3.0.1",
     "normalize.css": "8.0.1",

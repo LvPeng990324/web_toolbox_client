@@ -79,6 +79,21 @@ export const constantRoutes: RouteRecordRaw[] = [
     ]
   },
   {
+    path: "/json-format",
+    component: Layouts,
+    children: [
+      {
+        path: "dashboard",
+        component: () => import("@/pages/json_format/index.vue"),
+        name: "JsonFormat",
+        meta: {
+          title: "JSON格式化",
+          elIcon: "DataBoard"
+        }
+      }
+    ]
+  },
+  {
     path: "/demo",
     component: Layouts,
     redirect: "/demo/unocss",
