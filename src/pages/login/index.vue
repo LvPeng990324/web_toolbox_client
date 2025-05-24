@@ -58,6 +58,13 @@ function handleLogin() {
     })
   })
 }
+
+/** 游客登录 */
+function handleGuestLogin() {
+  loginFormData.username = "guest"
+
+  handleLogin()
+}
 </script>
 
 <template>
@@ -95,6 +102,9 @@ function handleLogin() {
           </el-form-item>
           <el-button :loading="loading" type="primary" size="large" @click.prevent="handleLogin">
             登 录
+          </el-button>
+          <el-button :loading="loading" type="success" size="large" @click.prevent="handleGuestLogin">
+            游 客 登 录
           </el-button>
         </el-form>
       </div>
@@ -149,6 +159,7 @@ function handleLogin() {
       .el-button {
         width: 100%;
         margin-top: 10px;
+        margin-left: 0px;
       }
     }
   }
