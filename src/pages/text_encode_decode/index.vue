@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import md5 from "js-md5"
+import { md5 } from "js-md5"
 import { ref } from "vue"
 
 const textarea_value = ref("")

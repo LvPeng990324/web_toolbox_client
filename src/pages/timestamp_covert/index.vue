@@ -11,14 +11,13 @@ function copy_timestamp() {
 }
 
 // 时间戳转时间的工具方法
-function get_time_from_timestamp(timestamp) {
+function get_time_from_timestamp(timestamp: string) {
   // 如果是秒级要转为毫秒级
   if (timestamp.length == 10) {
     timestamp += '000';
   }
-  timestamp = parseInt(timestamp);
 
-  let date = new Date(timestamp);
+  let date = new Date(Number.parseInt(timestamp));
   let Y = date.getFullYear() + '-';
   let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
   let D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
@@ -34,7 +33,7 @@ function timestamp_to_time() {
 }
 
 function time_to_timestamp() {
-  timestamp.value = Date.parse(new Date(time.value).toString())
+  timestamp.value = Date.parse(new Date(time.value).toString()).toString()
 }
 </script>
 
