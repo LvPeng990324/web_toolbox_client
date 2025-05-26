@@ -73,7 +73,7 @@ function handleGuestLogin() {
     <Owl :close-eyes="isFocus" />
     <div class="login-card">
       <div class="title">
-        <img src="@@/assets/images/layouts/logo-text-2.png">
+        <h2>工具箱！</h2>
       </div>
       <div class="content">
         <el-form ref="loginFormRef" :model="loginFormData" :rules="loginFormRules" @keyup.enter="handleLogin">
