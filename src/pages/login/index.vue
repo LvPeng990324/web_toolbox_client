@@ -25,8 +25,8 @@ const loading = ref(false)
 
 /** 登录表单数据 */
 const loginFormData: LoginRequestData = reactive({
-  username: "admin",
-  password: "12345678"
+  username: "",
+  password: ""
 })
 
 /** 登录表单校验规则 */
@@ -36,7 +36,7 @@ const loginFormRules: FormRules = {
   ],
   password: [
     { required: true, message: "请输入密码", trigger: "blur" },
-    { min: 8, max: 16, message: "长度在 8 到 16 个字符", trigger: "blur" }
+    { min: 1, max: 16, message: "长度在 1 到 16 个字符", trigger: "blur" }
   ]
 }
 
@@ -62,6 +62,7 @@ function handleLogin() {
 /** 游客登录 */
 function handleGuestLogin() {
   loginFormData.username = "guest"
+  loginFormData.password = "guest"
 
   handleLogin()
 }
