@@ -1,8 +1,8 @@
 import type { AxiosInstance, AxiosRequestConfig } from "axios"
-import { useUserStore } from "@/pinia/stores/user"
 import { getToken } from "@@/utils/cache/cookies"
 import axios from "axios"
 import { get, merge } from "lodash-es"
+import { useUserStore } from "@/pinia/stores/user"
 
 /** 退出登录并强制刷新页面（会重定向到登录页） */
 function logout() {
@@ -40,6 +40,9 @@ function createInstance() {
         case 0:
           // 本系统采用 code === 0 来表示没有业务错误
           return apiData
+        case 1:
+          ElMessage.error(apiData.message || "用户名密码错误")
+          return logout()
         case 401:
           // Token 过期时
           return logout()
